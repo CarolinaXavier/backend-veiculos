@@ -3,8 +3,8 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 
-const connectDB = require('./config/database');
-const veiculoRoutes = require('./routes/veiculo.routes');
+const connectDB = require('./src/config/database');
+const veiculoRoutes = require('./src/routes/veiculo.routes');
 
 const app = express();
 
@@ -24,8 +24,7 @@ app.use(async (req, res, next) => {
 
 app.use(cors());
 app.use(express.json());
-
-app.use('/veiculos', veiculoRoutes);
+app.use('/api/veiculos', veiculoRoutes);
 app.get('/', (req, res) => {
   res.send('API funcionando 🚀');
 });
