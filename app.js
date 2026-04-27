@@ -24,7 +24,7 @@ app.use(async (req, res, next) => {
 
 app.use(cors());
 app.use(express.json());
-app.use('/veiculos', veiculoRoutes);
+app.get('/veiculos', veiculoRoutes);
 /* app.get('/', (req, res) => {
   res.send('API funcionando 🚀');
 }); */
