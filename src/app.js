@@ -8,7 +8,7 @@ const app = express();
 
 let isConnected = false;
 
-const initDB = async () => {
+/* const initDB = async () => {
   if (!isConnected) {
     await connectDB();
     isConnected = true;
@@ -19,7 +19,7 @@ app.use(async (req, res, next) => {
   await initDB();
   next();
 });
-
+ */
 app.use(cors());
 app.use(express.json());
 
