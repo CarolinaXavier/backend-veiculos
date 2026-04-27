@@ -1,9 +1,13 @@
-// src/database.js
 const mongoose = require('mongoose');
 
+let isConnected = false;
+
 const connectDB = async () => {
+  if (isConnected) return;
+
   try {
-    await mongoose.connect('mongodb+srv://carolinaxavier_db_user:VhOnlU9EX4l0j703@cluster0.e7yxqlp.mongodb.net/?appName=Cluster0');
+    await mongoose.connect(process.env.MONGO_URI);
+    isConnected = true;
     console.log('MongoDB conectado');
   } catch (err) {
     console.error(err);
